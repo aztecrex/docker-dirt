@@ -7,6 +7,15 @@ MAINTAINER Greg Wiley <aztec.rex@jammm.com>
 # ADD source /path/to/dest
 # RUN /path/to/command
 
+RUN apt-get update && \
+    apt-get install -y \
+      git \
+      build-essential \
+      libsndfile1-dev \
+      libsamplerate0-dev \
+      liblo-dev
+
+
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 
