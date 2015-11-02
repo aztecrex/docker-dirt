@@ -13,15 +13,18 @@ RUN apt-get update && \
       build-essential \
       libsndfile1-dev \
       libsamplerate0-dev \
-      liblo-dev
-
-
+      liblo-dev \
+      libjack-jackd2-dev \
+      qjackctl \
+      jackd
+ 
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["dirt"]
+
 
 
 
